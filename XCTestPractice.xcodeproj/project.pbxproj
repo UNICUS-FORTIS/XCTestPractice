@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DE1FC3692BD18932002E59D6 /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1FC3682BD18932002E59D6 /* ValidationTests.swift */; };
 		DE1FC36B2BD18A2E002E59D6 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1FC36A2BD18A2E002E59D6 /* ValidationError.swift */; };
+		DE1FC3702BD19680002E59D6 /* ValidationNimbleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1FC36F2BD19680002E59D6 /* ValidationNimbleTest.swift */; };
+		DE1FC3762BD1A4A8002E59D6 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = DE1FC3752BD1A4A8002E59D6 /* Quick */; };
+		DE1FC3792BD1A4BA002E59D6 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = DE1FC3782BD1A4BA002E59D6 /* Nimble */; };
 		DE4D218F2BD17F6F00432F65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D218E2BD17F6F00432F65 /* AppDelegate.swift */; };
 		DE4D21912BD17F6F00432F65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D21902BD17F6F00432F65 /* SceneDelegate.swift */; };
 		DE4D21932BD17F6F00432F65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D21922BD17F6F00432F65 /* ViewController.swift */; };
@@ -41,6 +44,7 @@
 /* Begin PBXFileReference section */
 		DE1FC3682BD18932002E59D6 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		DE1FC36A2BD18A2E002E59D6 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		DE1FC36F2BD19680002E59D6 /* ValidationNimbleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationNimbleTest.swift; sourceTree = "<group>"; };
 		DE4D218B2BD17F6F00432F65 /* XCTestPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCTestPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4D218E2BD17F6F00432F65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE4D21902BD17F6F00432F65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1FC3762BD1A4A8002E59D6 /* Quick in Frameworks */,
+				DE1FC3792BD1A4BA002E59D6 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				DE1FC3682BD18932002E59D6 /* ValidationTests.swift */,
+				DE1FC36F2BD19680002E59D6 /* ValidationNimbleTest.swift */,
 				DE4D21A52BD17F7000432F65 /* XCTestPracticeTests.swift */,
 			);
 			path = XCTestPracticeTests;
@@ -196,6 +203,10 @@
 				DE4D21A32BD17F7000432F65 /* PBXTargetDependency */,
 			);
 			name = XCTestPracticeTests;
+			packageProductDependencies = (
+				DE1FC3752BD1A4A8002E59D6 /* Quick */,
+				DE1FC3782BD1A4BA002E59D6 /* Nimble */,
+			);
 			productName = XCTestPracticeTests;
 			productReference = DE4D21A12BD17F7000432F65 /* XCTestPracticeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -252,6 +263,8 @@
 			mainGroup = DE4D21822BD17F6F00432F65;
 			packageReferences = (
 				DE4D21BF2BD1802600432F65 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				DE1FC3742BD1A4A8002E59D6 /* XCRemoteSwiftPackageReference "Quick" */,
+				DE1FC3772BD1A4BA002E59D6 /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = DE4D218C2BD17F6F00432F65 /* Products */;
 			projectDirPath = "";
@@ -308,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1FC3692BD18932002E59D6 /* ValidationTests.swift in Sources */,
+				DE1FC3702BD19680002E59D6 /* ValidationNimbleTest.swift in Sources */,
 				DE4D21A62BD17F7000432F65 /* XCTestPracticeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +661,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DE1FC3742BD1A4A8002E59D6 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.5.0;
+			};
+		};
+		DE1FC3772BD1A4BA002E59D6 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.3.0;
+			};
+		};
 		DE4D21BF2BD1802600432F65 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -658,6 +688,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DE1FC3752BD1A4A8002E59D6 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1FC3742BD1A4A8002E59D6 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		DE1FC3782BD1A4BA002E59D6 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE1FC3772BD1A4BA002E59D6 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
 		DE4D21C02BD1802600432F65 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DE4D21BF2BD1802600432F65 /* XCRemoteSwiftPackageReference "SnapKit" */;

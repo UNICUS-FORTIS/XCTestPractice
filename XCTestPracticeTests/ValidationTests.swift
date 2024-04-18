@@ -10,7 +10,7 @@ import XCTest
 
 final class ValidationTests: XCTestCase {
 
-    var validation: ValidationCenter!
+    var sut: ValidationCenter!
     let successEmail = "unicus.fortis@gmail.com"
     let failureEmail = "unicus.fortis@gmail"
     let successPassword = "Louie9999@@"
@@ -18,38 +18,38 @@ final class ValidationTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        validation = ValidationCenter()
+        sut = ValidationCenter()
     }
     
     override func tearDown() {
         super.tearDown()
-        validation = nil
+        sut = nil
     }
     
     func testValidator_ValidEmail_ReturnTrue() throws {
-        XCTAssertNoThrow(try validation.validateEmail(successEmail))
+        XCTAssertNoThrow(try sut.validateEmail(successEmail))
     }
     
     func testValidator_InValidEmail_ReturnFalse() throws {
         let expectedError = ValidationError.invalidEmail
         var error: ValidationError?
         
-        XCTAssertThrowsError(try validation.validateEmail(failureEmail)) { thrownError in
+        XCTAssertThrowsError(try sut.validateEmail(failureEmail)) { thrownError in
             error = thrownError as? ValidationError
         }
         
         XCTAssertEqual(expectedError, error)
     }
     
-    func testValidator_InvalidPassword_ReturnTrue() throws {
-        XCTAssertNoThrow(try validation.validatePassword(successPassword))
+    func testValidator_ValidPassword_ReturnTrue() throws {
+        XCTAssertNoThrow(try sut.validatePassword(successPassword))
     }
     
     func testValidator_InvalidPassword_ReturnFalse() throws {
         let expectedError = ValidationError.invalidPassword
         var error: ValidationError?
         
-        XCTAssertThrowsError(try validation.validatePassword(failurePassword)) { thrownError in
+        XCTAssertThrowsError(try sut.validatePassword(failurePassword)) { thrownError in
             error = thrownError as? ValidationError
         }
         
